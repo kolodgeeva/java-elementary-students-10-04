@@ -1,0 +1,17 @@
+<form action="#" th:action="@{/add}" th:object="${student}" method="post"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+
+  <label for="firstName">First name</label>
+  <input type="text" th:field="*{firstName}" id="firstName" placeholder="First name">
+  <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+
+  <br/>
+
+  <label for="lastName">Last name</label>
+  <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last name">
+  <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+
+  <br/>
+
+  <input type="submit" value="Add Student">
+</form>
